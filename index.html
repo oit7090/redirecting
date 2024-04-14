@@ -1,1 +1,25 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tautan Dinamis</title>
+</head>
+<body>
+
+<!-- Tautan dengan URL statis -->
+<a href="https://www.example.com">Tautan Statis</a>
+
+<!-- Tautan dengan URL dinamis menggunakan JavaScript -->
+<a id="dynamicLink" href="#">Tautan Dinamis</a>
+
+<script>
+// Mengubah URL tautan dinamis menggunakan JavaScript
+document.getElementById('dynamicLink').addEventListener('click', function() {
+    var dynamicURL = 'https://www.example.com/dynamic-page'; // URL dinamis
+    this.href = dynamicURL;
+});
+</script>
+
+</body>
+</html>
