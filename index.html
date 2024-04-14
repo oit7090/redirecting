@@ -23,7 +23,7 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
   var longURL = document.getElementById('urlInput').value;
   
   // Memperpendek URL menggunakan hash dari timestamp
-  var shortURL = 'https://www.example.com/' + Date.now().toString(36);
+  var shortURL = 'https://oit7090.github.io/redirecting/' + Date.now().toString(36);
   
   // Menampilkan short link
   document.getElementById('shortLinkResult').innerHTML = '<a href="' + shortURL + '" target="_blank">' + shortURL + '</a>';
