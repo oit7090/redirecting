@@ -3,21 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tautan Dinamis</title>
+<title>Short Link</title>
 </head>
 <body>
 
-<!-- Tautan dengan URL statis -->
-<a href="https://www.example.com">Tautan Statis</a>
+<!-- Form untuk memasukkan URL -->
+<form id="urlForm">
+  <label for="urlInput">Masukkan URL:</label><br>
+  <input type="text" id="urlInput" name="urlInput"><br><br>
+  <input type="submit" value="Shorten">
+</form>
 
-<!-- Tautan dengan URL dinamis menggunakan JavaScript -->
-<a id="dynamicLink" href="#">Tautan Dinamis</a>
+<!-- Hasil short link -->
+<div id="shortLinkResult"></div>
 
 <script>
-// Mengubah URL tautan dinamis menggunakan JavaScript
-document.getElementById('dynamicLink').addEventListener('click', function() {
-    var dynamicURL = 'https://www.example.com/dynamic-page'; // URL dinamis
-    this.href = dynamicURL;
+document.getElementById('urlForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Mencegah reload halaman saat form disubmit
+  var longURL = document.getElementById('urlInput').value;
+  
+  // Memperpendek URL menggunakan hash dari timestamp
+  var shortURL = 'https://www.example.com/' + Date.now().toString(36);
+  
+  // Menampilkan short link
+  document.getElementById('shortLinkResult').innerHTML = '<a href="' + shortURL + '" target="_blank">' + shortURL + '</a>';
 });
 </script>
 
